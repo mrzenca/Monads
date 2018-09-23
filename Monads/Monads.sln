@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Monads", "Monads\Monads.shproj", "{4D266528-265A-48ED-885C-52590948F270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monads.Test", "Monads.Test\Monads.Test.csproj", "{B024FBE1-A1C5-4164-8C64-13FE7FA2D888}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Monads\Monads.projitems*{4d266528-265a-48ed-885c-52590948f270}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B024FBE1-A1C5-4164-8C64-13FE7FA2D888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B024FBE1-A1C5-4164-8C64-13FE7FA2D888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B024FBE1-A1C5-4164-8C64-13FE7FA2D888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B024FBE1-A1C5-4164-8C64-13FE7FA2D888}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {403A4A20-A6F9-4D44-90A9-21F7B1D7BF5B}
+	EndGlobalSection
+EndGlobal

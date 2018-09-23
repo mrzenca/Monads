@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4d266528-265a-48ed-885c-52590948f270</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Monads</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Failure.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Maybe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Success.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Try.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TryException.cs" />
+  </ItemGroup>
+</Project>
