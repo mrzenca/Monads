@@ -45,6 +45,16 @@ namespace Monads
             return value;
         }
 
+        public override T GetOrException(Exception exception)
+        {
+            return value;
+        }
+
+        public override T GetOrException(string message)
+        {
+            return value;
+        }
+
         public override Try<T> OrElse(Func<T> other)
         {
             return this;
@@ -60,12 +70,12 @@ namespace Monads
             return Maybe.Invoke(() => mapper.Invoke(value).Get());
         }
 
-        public override Try<T> Recover(Func<Exception, T> mapper)
+        public override Try<T> Recover(Func<Exception, T> recover)
         {
             return this;
         }
 
-        public override Try<T> Recover<U>(Func<Exception, T> mapper)
+        public override Try<T> Recover<U>(Func<Exception, T> recover)
         {
             return this;
         }
@@ -103,6 +113,20 @@ namespace Monads
             }
         }
 
+        public override Try<T> TrySet(Action<T> setter)
+        {
+            try
+            {
+                setter.Invoke(value);
+
+                return this;
+            }
+            catch (Exception)
+            {
+                return this;
+            }
+        }
+
         public override Try<T> Is(Predicate<T> predicate, Action<T> setter)
         {
             try
@@ -119,6 +143,17 @@ namespace Monads
             {
                 return new Failure<T>(ex);
             }
+        }
+
+        public override Try<T> Is(Predicate<T> predicate, Exception exception)
+        {
+            if (!this.IsEvaluated && predicate(value))
+            {
+                this.isEvaluated = true;
+                return new Failure<T>(exception);
+            }
+
+            return this;
         }
     }
 }

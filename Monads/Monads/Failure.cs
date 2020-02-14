@@ -46,6 +46,16 @@ namespace Monads
             return other;
         }
 
+        public override T GetOrException(Exception exception)
+        {
+            throw exception;
+        }
+
+        public override T GetOrException(string message)
+        {
+            throw new Exception(message, this.exception);
+        }
+
         public override Try<T> OrElse(Func<T> other)
         {
             return Maybe.Invoke(other);
@@ -88,7 +98,17 @@ namespace Monads
             return this;
         }
 
+        public override Try<T> TrySet(Action<T> setter)
+        {
+            return this;
+        }
+
         public override Try<T> Is(Predicate<T> predicate, Action<T> setter)
+        {
+            return this;
+        }
+
+        public override Try<T> Is(Predicate<T> predicate, Exception exception)
         {
             return this;
         }
