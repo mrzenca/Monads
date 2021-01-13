@@ -12,6 +12,8 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
   </ItemGroup>
 
-  <Import Project="..\Monads\Monads.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\Monads\Monads.csproj" />
+  </ItemGroup>
 
 </Project>
